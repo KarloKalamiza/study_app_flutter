@@ -20,7 +20,7 @@ class QuestionPaperModel {
         imageUrl = json['image_url'],
         description = json['Description'],
         timeSeconds = json['time_seconds'],
-        questions = {json['question'] as List}
+        questions = (json['questions'] as List)
             .map((dynamic e) => Questions.fromJson(e as Map<String, dynamic>))
             .toList();
 
@@ -31,7 +31,7 @@ class QuestionPaperModel {
     data['image_url'] = this.imageUrl;
     data['Description'] = this.description;
     data['time_seconds'] = this.timeSeconds;
-    
+
     return data;
   }
 }
